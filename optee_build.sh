@@ -12,7 +12,11 @@ cd optee_client
 make  WITH_TEEACL=0 CROSS_COMPILE=$2
 if [ $? -eq 0 ]; then 
 	echo "copy optee_client out file to rootfs"
-	cp out/export/usr/lib/libteec.so.1 ../../linux/rootfs/initramfs/disk/lib64/
+	if [ ! -d ../../linux/rootfs/initramfs/disk/lib64 ]; then
+		cp out/export/usr/lib/libteec.so.1 ../../linux/rootfs/initramfs/disk/lib/
+	else
+		cp out/export/usr/lib/libteec.so.1 ../../linux/rootfs/initramfs/disk/lib64/
+	fi
 	cp out/export/usr/sbin/tee-supplicant ../../linux/rootfs/initramfs/disk/bin/
 fi
 cd ..
