@@ -8,18 +8,8 @@
 
 #define SIZE_K(n)		((n) * 1024)
 
-#ifdef PLATFORM_FLAVOR_Q645
-
-
-#define CONSOLE_SP_UART_BASE	0xF800F900 /* UARTDBG   G498.0*/
+#define CONSOLE_SP_UART_BASE	0xF8801900 /* UART0 */
 #define SP_UART_REG_SIZE        0x80
-
-#elif defined(PLATFORM_FLAVOR_SP7350)  /* #ifdef PLATFORM_FLAVOR_SP7350 */
-
-#define CONSOLE_SP_UART_BASE	0xF800F900 /* UARTDBG   G498.0*/
-#define SP_UART_REG_SIZE        0x80
-
-#endif /* #ifdef PLATFORM_FLAVOR_Q645 */
 
 #define SP_SPI_FLASH_BASE   0xF0000000
 #define SP_SPI_FLASH_SIZE   0x20000

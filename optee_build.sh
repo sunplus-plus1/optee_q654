@@ -1,10 +1,8 @@
 echo "##### build optee_os  #####"
 cd optee_os
-if [ $1 = "Q645" ]; then
-	make -f q645.mk
-else
-	make -f sp7350.mk
-fi
+
+make -f sp7350.mk
+
 cd ..
 
 echo "##### build optee_client #####"
