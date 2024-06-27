@@ -1,5 +1,5 @@
-CROSS_COMPILE = ../../crossgcc/gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu-
-AARCH32_CROSS_COMPILE = ../../crossgcc/gcc-arm-9.2-2019.12-x86_64-arm-none-eabi/bin/arm-none-eabi-
+CROSS_COMPILE = $(TOOLCHAIN_AARCH64_PATH)/bin/$(TOOLCHAIN_AARCH64_PREFIX)-
+AARCH32_CROSS_COMPILE = $(TOOLCHAIN_AARCH32_PATH)/bin/$(TOOLCHAIN_AARCH32_PREFIX)-
 OPTEE_HEADER_BIN	:= tee-header_v2.sp
 OPTEE_PAGER_BIN		:= tee-pager_v2.sp
 OPTEE_PAGEABLE_BIN  := tee-pageable_v2.sp
